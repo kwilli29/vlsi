@@ -1,0 +1,132 @@
+@(#)$CDS: LVS version 6.1.7-64b 12/16/2018 07:37 (sjfhw317) $
+
+Command line: /escnfs/home/csesoft/cadence/installs/IC617/tools.lnx86/dfII/bin/64bit/LVS -dir /escnfs/courses/fa22-cse-40462.01/dropbox/kwilli29/VLSI/LVS -l -s -t /escnfs/courses/fa22-cse-40462.01/dropbox/kwilli29/VLSI/LVS/layout /escnfs/courses/fa22-cse-40462.01/dropbox/kwilli29/VLSI/LVS/schematic
+Like matching is enabled.
+Net swapping is enabled.
+Using terminal names as correspondence points.
+Compiling Diva LVS rules...
+
+    Net-list summary for /escnfs/courses/fa22-cse-40462.01/dropbox/kwilli29/VLSI/LVS/layout/netlist
+       count
+        10              nets
+        7               terminals
+        4               pmos
+        4               nmos
+
+    Net-list summary for /escnfs/courses/fa22-cse-40462.01/dropbox/kwilli29/VLSI/LVS/schematic/netlist
+       count
+        11              nets
+        7               terminals
+        4               pmos
+        4               nmos
+
+
+    Terminal correspondence points
+    N7        N2        a
+    N6        N4        b
+    N5        N5        c
+    N4        N3        d
+    N3        N1        gnd!
+    N8        N0        vdd!
+    N9        N7        y
+
+Devices in the rules but not in the netlist:
+        cap nfet pfet nmos4 pmos4
+
+    Ill-defined correspondence points.
+
+	N3	N1  Accepted because one is a subset of the other
+	N3	N1  Accepted because one is a subset of the other
+
+
+        Device summary for schematic
+                   bad  total
+            nmos     4      4
+
+The net-lists failed to match.
+
+                             layout  schematic
+                                instances
+        un-matched              0       4      
+        rewired                 0       0      
+        size errors             0       0      
+        pruned                  0       0      
+        active                  8       8      
+        total                   8       8      
+
+                                  nets
+        un-matched              2       3      
+        merged                  0       0      
+        pruned                  0       0      
+        active                  10      11     
+        total                   10      11     
+
+                                terminals
+        un-matched              1       1      
+        matched but
+        different type          4       4      
+        total                   7       7      
+
+
+Probe files from /escnfs/courses/fa22-cse-40462.01/dropbox/kwilli29/VLSI/LVS/schematic
+
+devbad.out:
+I /N0
+? Device does not cross-match.
+I /N3
+? Device does not cross-match.
+I /N2
+? Device does not cross-match.
+I /N1
+? Device does not cross-match.
+
+netbad.out:
+N /net020
+? Net does not cross-match. It has 1 connections.
+N /gnd!
+? Net does not cross-match. It has 2 connections.
+N /net18
+? Net does not cross-match. It has 2 connections.
+
+mergenet.out:
+
+termbad.out:
+? Terminal a's type in the schematic: input, in the layout: inputOutput
+? Terminal b's type in the schematic: input, in the layout: inputOutput
+? Terminal c's type in the schematic: input, in the layout: inputOutput
+? Terminal d's type in the schematic: input, in the layout: inputOutput
+T -1  gnd! /gnd!
+? Terminal gnd! in the schematic failed to match any terminal in the layout.
+
+prunenet.out:
+
+prunedev.out:
+
+audit.out:
+
+
+Probe files from /escnfs/courses/fa22-cse-40462.01/dropbox/kwilli29/VLSI/LVS/layout
+
+devbad.out:
+
+netbad.out:
+N /gnd!
+? Net does not cross-match. It has 3 connections.
+N /8
+? Net does not cross-match. It has 2 connections.
+
+mergenet.out:
+
+termbad.out:
+? Terminal a's type in the layout: inputOutput, in the schematic: input
+? Terminal b's type in the layout: inputOutput, in the schematic: input
+? Terminal c's type in the layout: inputOutput, in the schematic: input
+? Terminal d's type in the layout: inputOutput, in the schematic: input
+T -1  gnd! /gnd!
+? Terminal gnd! in the layout failed to match any terminal in the schematic.
+
+prunenet.out:
+
+prunedev.out:
+
+audit.out:

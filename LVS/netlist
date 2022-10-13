@@ -1,0 +1,25 @@
+// Library name: lab3_kwilli29
+// Cell name: part2_circuit
+// View name: schematic
+
+vdd (vdd! 0) vsource dc = 5
+gnd (vss! 0) vsource dc = 0
+
+N2 (net18 b 0 net020) ami06N w=1.95u l=600n as=2.925e-12 ad=2.925e-12 \
+        ps=6.9u pd=6.9u m=1 region=sat
+N0 (y d net18 net020) ami06N w=1.95u l=600n as=2.925e-12 ad=2.925e-12 \
+        ps=6.9u pd=6.9u m=1 region=sat
+N1 (net18 a 0 net020) ami06N w=1.95u l=600n as=2.925e-12 ad=2.925e-12 \
+        ps=6.9u pd=6.9u m=1 region=sat
+N3 (y c net18 net020) ami06N w=1.95u l=600n as=2.925e-12 ad=2.925e-12 \
+        ps=6.9u pd=6.9u m=1 region=sat
+P2 (y d net27 vdd!) ami06P w=4.05u l=600n as=6.075e-12 ad=6.075e-12 \
+        ps=11.1u pd=11.1u m=1 region=sat
+P1 (y b net28 vdd!) ami06P w=4.05u l=600n as=6.075e-12 ad=6.075e-12 \
+        ps=11.1u pd=11.1u m=1 region=sat
+P0 (net28 a vdd! vdd!) ami06P w=4.05u l=600n as=6.075e-12 ad=6.075e-12 \
+        ps=11.1u pd=11.1u m=1 region=sat
+P3 (net27 c vdd! vdd!) ami06P w=4.05u l=600n as=6.075e-12 ad=6.075e-12 \
+        ps=11.1u pd=11.1u m=1 region=sat
+V1 (net020 0) vsource type=dc
+V0 (vdd! 0) vsource type=dc
