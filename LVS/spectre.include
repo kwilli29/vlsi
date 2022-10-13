@@ -1,6 +1,0 @@
-// Included Model Files
-
-include "$CDK_DIR/models/spectre/standalone/ami06N.m"
-
-include "$CDK_DIR/models/spectre/standalone/ami06P.m"
-
