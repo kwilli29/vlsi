@@ -1,0 +1,65 @@
+// Default Spectre Simulation run title card.
+
+
+// Generated for: spectre
+// Generated on: Oct 13 00:06:01 2022
+// Design library name: lab3_kwilli29
+// Design cell name: part2_circuit
+// Design view name: schematic
+simulator lang=spectre
+global 0 vdd!
+
+
+// Included Model Files
+
+include "$CDK_DIR/models/spectre/standalone/ami06N.m"
+
+include "$CDK_DIR/models/spectre/standalone/ami06P.m"
+
+
+
+// Library name: lab3_kwilli29
+// Cell name: part2_circuit
+// View name: schematic
+vdd (vdd! 0) vsource dc = 5
+gnd (vss! 0) vsource dc - 0
+
+N2 (net18 b 0 net020) ami06N w=1.95u l=600n as=2.925e-12 ad=2.925e-12 \
+        ps=6.9u pd=6.9u m=1 region=sat
+N0 (y d net18 net020) ami06N w=1.95u l=600n as=2.925e-12 ad=2.925e-12 \
+        ps=6.9u pd=6.9u m=1 region=sat
+N1 (net18 a 0 net020) ami06N w=1.95u l=600n as=2.925e-12 ad=2.925e-12 \
+        ps=6.9u pd=6.9u m=1 region=sat
+N3 (y c net18 net020) ami06N w=1.95u l=600n as=2.925e-12 ad=2.925e-12 \
+        ps=6.9u pd=6.9u m=1 region=sat
+P2 (y d net27 vdd!) ami06P w=4.05u l=600n as=6.075e-12 ad=6.075e-12 \
+        ps=11.1u pd=11.1u m=1 region=sat
+P1 (y b net28 vdd!) ami06P w=4.05u l=600n as=6.075e-12 ad=6.075e-12 \
+        ps=11.1u pd=11.1u m=1 region=sat
+P0 (net28 a vdd! vdd!) ami06P w=4.05u l=600n as=6.075e-12 ad=6.075e-12 \
+        ps=11.1u pd=11.1u m=1 region=sat
+P3 (net27 c vdd! vdd!) ami06P w=4.05u l=600n as=6.075e-12 ad=6.075e-12 \
+        ps=11.1u pd=11.1u m=1 region=sat
+V1 (net020 0) vsource type=dc dc=0
+V0 (vdd! 0) vsource type=dc dc=5
+
+// Spectre Source Statements
+
+// Spectre Analyses and Output Options Statements
+
+// Output Options
+simOptions options
+//+      reltol = 1.00000000E-03
+//+      vabstol = 1.00000000E-06
+//+      iabstol = 1.00000000E-12
+//+      temp = 27
+//+      save = allpub
+//+      currents = selected
+
+// Analyses
+// dc1 dc oppoint=logfile homotopy=all
+tran1 tran start=0 stop=16.1u step=0.1n  errpreset=moderate
+
+
+
+// End of Netlist
