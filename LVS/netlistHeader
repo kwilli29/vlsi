@@ -1,7 +1,0 @@
-// Generated for: spectre
-// Generated on: Oct 12 15:26:00 2022
-// Design library name: lab3_kwilli29
-// Design cell name: part2_circuit
-// Design view name: schematic
-simulator lang=spectre
-global 0 vdd!

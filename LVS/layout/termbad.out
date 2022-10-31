@@ -1,6 +1,0 @@
-? Terminal a's type in the layout: inputOutput, in the schematic: input
-? Terminal b's type in the layout: inputOutput, in the schematic: input
-? Terminal c's type in the layout: inputOutput, in the schematic: input
-? Terminal d's type in the layout: inputOutput, in the schematic: input
-T -1  gnd! /gnd!
-? Terminal gnd! in the layout failed to match any terminal in the schematic.
